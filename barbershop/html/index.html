@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Red's Barbershop — Premium barbershop in Monterey, CA. Classic cuts, hot towel shaves, and beard styling.">
+  <title>Red's Barbershop | Monterey, CA</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="#hero" class="nav-logo">RED'S BARBERSHOP</a>
+      <ul class="nav-links" role="list">
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#gallery" class="nav-link">Gallery</a></li>
+        <li><a href="#hours" class="nav-link">Hours</a></li>
+        <li><a href="#contact" class="nav-link btn btn-outline nav-cta">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== MOBILE MENU ===== -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
+    <ul class="mobile-menu-links" role="list">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#hours">Hours</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <img
+      src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1920&q=80&fit=crop"
+      alt="Placeholder: barbershop interior — replace with real photo"
+      class="hero-bg"
+      fetchpriority="high"
+    >
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">EST. 2010 &mdash; MONTEREY, CALIFORNIA</p>
+      <h1 class="hero-title">RED'S BARBERSHOP</h1>
+      <a href="#services" class="btn btn-primary">EXPLORE OUR SERVICES</a>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY ===== -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <div class="section-header fade-in-up">
+        <p class="section-label">THE WORK</p>
+        <h2 class="section-title">Fresh Cuts Gallery</h2>
+      </div>
+    </div>
+
+    <!--
+      ============================================================
+      GALLERY PHOTOS — easy to edit
+      ============================================================
+      TO ADD A PHOTO:
+        Copy any <div class="gallery-item"> block below,
+        paste it inside .gallery-track, and change the src= value.
+
+      TO REMOVE A PHOTO:
+        Delete the entire <div class="gallery-item"> ... </div> block.
+
+      Photos auto-scroll and can be clicked to open a full popup.
+      ============================================================
+    -->
+    <div class="gallery-scroll-wrapper">
+      <div class="gallery-track" id="galleryTrack">
+
+        <div class="gallery-item">
+          <img src="https://picsum.photos/seed/gallery-cut-1/600/800" alt="Gallery photo 1 — replace with real photo" loading="lazy">
+          <div class="gallery-hover-overlay"><span>View</span></div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://picsum.photos/seed/gallery-cut-2/600/800" alt="Gallery photo 2 — replace with real photo" loading="lazy">
+          <div class="gallery-hover-overlay"><span>View</span></div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://picsum.photos/seed/gallery-cut-3/600/800" alt="Gallery photo 3 — replace with real photo" loading="lazy">
+          <div class="gallery-hover-overlay"><span>View</span></div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://picsum.photos/seed/gallery-cut-4/600/800" alt="Gallery photo 4 — replace with real photo" loading="lazy">
+          <div class="gallery-hover-overlay"><span>View</span></div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://picsum.photos/seed/gallery-cut-5/600/800" alt="Gallery photo 5 — replace with real photo" loading="lazy">
+          <div class="gallery-hover-overlay"><span>View</span></div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://picsum.photos/seed/gallery-cut-6/600/800" alt="Gallery photo 6 — replace with real photo" loading="lazy">
+          <div class="gallery-hover-overlay"><span>View</span></div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://picsum.photos/seed/gallery-cut-7/600/800" alt="Gallery photo 7 — replace with real photo" loading="lazy">
+          <div class="gallery-hover-overlay"><span>View</span></div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://picsum.photos/seed/gallery-cut-8/600/800" alt="Gallery photo 8 — replace with real photo" loading="lazy">
+          <div class="gallery-hover-overlay"><span>View</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" aria-hidden="true">
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close photo">&#x2715;</button>
+    <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous photo">&#8249;</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    <button class="lightbox-next" id="lightboxNext" aria-label="Next photo">&#8250;</button>
+  </div>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="section-header fade-in-up">
+        <p class="section-label">WHAT WE OFFER</p>
+        <h2 class="section-title">Our Services</h2>
+      </div>
+      <div class="services-grid">
+
+        <div class="service-card fade-in-up">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="6" cy="6" r="3"/>
+              <circle cx="6" cy="18" r="3"/>
+              <line x1="20" y1="4" x2="8.12" y2="15.88"/>
+              <line x1="14.47" y1="14.48" x2="20" y2="20"/>
+              <line x1="8.12" y1="8.12" x2="12" y2="12"/>
+            </svg>
+          </div>
+          <h3 class="service-name">Classic Haircut</h3>
+          <p class="service-desc">A timeless cut tailored to your face shape and style preferences.</p>
+          <p class="service-price">$30</p>
+        </div>
+
+        <div class="service-card fade-in-up">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/>
+              <line x1="4" y1="22" x2="4" y2="15"/>
+            </svg>
+          </div>
+          <h3 class="service-name">Fade &amp; Taper</h3>
+          <p class="service-desc">Clean, precise fade from skin to length &mdash; any style, any skin.</p>
+          <p class="service-price">$35</p>
+        </div>
+
+        <div class="service-card fade-in-up">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3 class="service-name">Hot Towel Shave</h3>
+          <p class="service-desc">Straight-razor shave with hot towel prep and post-shave treatment.</p>
+          <p class="service-price">$40</p>
+        </div>
+
+        <div class="service-card fade-in-up">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="7" r="4"/>
+              <path d="M5.5 20c0-3.5 2.9-5 6.5-5s6.5 1.5 6.5 5"/>
+              <path d="M9 17c.5 2 1.5 3 3 3s2.5-1 3-3"/>
+            </svg>
+          </div>
+          <h3 class="service-name">Beard Trim &amp; Shape</h3>
+          <p class="service-desc">Precision beard sculpting to define and clean up your look.</p>
+          <p class="service-price">$25</p>
+        </div>
+
+        <div class="service-card fade-in-up">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+          </div>
+          <h3 class="service-name">Hair + Beard Combo</h3>
+          <p class="service-desc">Full haircut plus beard trim and shape &mdash; the complete package.</p>
+          <p class="service-price">$55</p>
+        </div>
+
+        <div class="service-card fade-in-up">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h3 class="service-name">Kids Cut</h3>
+          <p class="service-desc">Patient, fun cuts for the little ones. Ages 12 and under.</p>
+          <p class="service-price">$20</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOURS & LOCATION ===== -->
+  <section class="section hours" id="hours">
+    <div class="container">
+      <div class="hours-grid">
+        <div class="hours-block fade-in-up">
+          <p class="section-label">HOURS</p>
+          <h2 class="section-title">When We&rsquo;re Open</h2>
+          <table class="hours-table" aria-label="Business hours">
+            <tbody>
+              <tr>
+                <td>Monday &ndash; Friday</td>
+                <td class="hours-time">9:00 AM &ndash; 7:00 PM</td>
+              </tr>
+              <tr>
+                <td>Saturday</td>
+                <td class="hours-time">9:00 AM &ndash; 5:00 PM</td>
+              </tr>
+              <tr>
+                <td>Sunday</td>
+                <td class="closed">Closed</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="location-block fade-in-up">
+          <p class="section-label">FIND US</p>
+          <h2 class="section-title">Our Location</h2>
+          <address class="address">
+            <p>123 Main Street, Suite 4</p>
+            <p>Monterey, CA 93940</p>
+            <p><a href="tel:+15550123456">(555) 012-3456</a></p>
+            <p><a href="mailto:hello@redsbarbershop.com">hello@redsbarbershop.com</a></p>
+          </address>
+          <div class="map-placeholder">
+            <img
+              src="https://picsum.photos/seed/barbershop-map/800/350"
+              alt="Placeholder: map — replace with Google Maps embed"
+              loading="lazy"
+            >
+            <p class="map-note">&#9432; Replace this image with a Google Maps &lt;iframe&gt; embed</p>
+          </div>
+          <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline">GET DIRECTIONS</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA STRIP ===== -->
+  <section class="section cta-strip" id="contact">
+    <div class="container cta-inner">
+      <h2 class="cta-title fade-in-up">Call For Appointment</h2>
+      <div class="cta-buttons fade-in-up">
+        <a href="tel:+15550123456" class="btn btn-primary">CALL US NOW</a>
+      </div>
+      <p class="cta-phone fade-in-up"><a href="tel:+15550123456">(555) 012-3456</a></p>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="#hero" class="footer-logo">RED'S BARBERSHOP</a>
+      <ul class="footer-links" role="list">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#hours">Hours</a></li>
+      </ul>
+      <p class="footer-copy">&copy; <span id="current-year"></span> Red&rsquo;s Barbershop. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>

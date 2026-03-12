@@ -10,9 +10,12 @@
 <body>
 
   <!-- NAV -->
-  <nav>
+  <nav id="main-nav">
     <a href="#" class="nav-logo">Hermick's</a>
-    <ul class="nav-links">
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#packages">Packages</a></li>
@@ -53,7 +56,7 @@
     <div class="services-header">
       <h2 class="section-title">Services</h2>
       <div class="divider"></div>
-      <p class="section-sub">Hover each card to preview.</p>
+      <p class="section-sub">Hover or click each card for full image.</p>
     </div>
 
     <!-- CATEGORY: Facials & Skin Treatments -->
@@ -509,6 +512,7 @@
   </footer>
 
   <script>
+    // Inject Book button into every service card
     document.querySelectorAll('.svc-card').forEach(function(card) {
       var btn = document.createElement('a');
       btn.href = 'https://hemricks.glossgenius.com/services';
@@ -516,6 +520,29 @@
       btn.className = 'svc-book-btn';
       btn.textContent = 'Book';
       card.appendChild(btn);
+    });
+
+    // Mobile: tap to expand service cards
+    function isMobile() { return window.innerWidth <= 768; }
+    document.querySelectorAll('.svc-card').forEach(function(card) {
+      card.addEventListener('click', function(e) {
+        if (!isMobile()) return;
+        if (e.target.classList.contains('svc-book-btn')) return;
+        card.classList.toggle('expanded');
+      });
+    });
+
+    // Mobile nav hamburger
+    var hamburger = document.getElementById('nav-hamburger');
+    var navLinks  = document.getElementById('nav-links');
+    var nav       = document.getElementById('main-nav');
+    hamburger.addEventListener('click', function() {
+      nav.classList.toggle('nav-open');
+    });
+    navLinks.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        nav.classList.remove('nav-open');
+      });
     });
   </script>
 </body>
